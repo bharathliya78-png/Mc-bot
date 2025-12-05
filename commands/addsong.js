@@ -34,8 +34,6 @@ async function addSong(client, interaction, lang) {
                     url: config.SupportServer
                 })
                 .setDescription(lang.addsong.embed.accessDeniedDescription)
-                .setFooter({ text: lang.footer, iconURL: musicIcons.heartIcon })
-                .setTimestamp();
             await interaction.reply({ embeds: [embed], ephemeral: true });
             return;
         }
@@ -102,4 +100,5 @@ module.exports = {
         }
     ],
     run: addSong
+
 };
