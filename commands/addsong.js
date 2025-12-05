@@ -19,8 +19,6 @@ async function addSong(client, interaction, lang) {
                     url: config.SupportServer
                 })
                 .setDescription(lang.addsong.embed.playlistNotFoundDescription)
-                .setFooter({ text: lang.footer, iconURL: musicIcons.heartIcon })
-                .setTimestamp();
             await interaction.reply({ embeds: [embed], ephemeral: true });
             return;
         }
@@ -60,9 +58,6 @@ async function addSong(client, interaction, lang) {
                 url: config.SupportServer
             })
             .setDescription(lang.addsong.embed.songAddedDescription.replace("{songInput}", songInput).replace("{playlistName}", playlistName))
-            .setFooter({ text: lang.footer, iconURL: musicIcons.heartIcon })
-            .setTimestamp();
-
         await interaction.reply({ embeds: [embed] });
     } catch (error) {
         console.error('Error adding song:', error);
@@ -74,9 +69,6 @@ async function addSong(client, interaction, lang) {
                 url: config.SupportServer
             })
             .setDescription(lang.addsong.embed.errorDescription)
-            .setFooter({ text: lang.footer, iconURL: musicIcons.heartIcon })
-            .setTimestamp();
-
         await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
     }
 }
@@ -102,3 +94,4 @@ module.exports = {
     run: addSong
 
 };
+
