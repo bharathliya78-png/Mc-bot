@@ -55,9 +55,6 @@ module.exports = {
             }).join('\n') || lang.help.embed.noCommands
           }
         )
-        .setFooter({ text: lang.footer, iconURL: musicIcons.heartIcon })
-        .setTimestamp();
-
       return interaction.reply({ embeds: [embed] });
     } catch (e) {
       console.error(e);
