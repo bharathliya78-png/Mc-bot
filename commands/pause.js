@@ -30,7 +30,6 @@ async function pause(client, interaction, lang) {
                 iconURL: musicIcons.pauseresumeIcon,
                 url: config.SupportServer
             })
-            .setFooter({ text: lang.footer, iconURL: musicIcons.heartIcon })
             .setDescription(lang.pause.embed.pausedDescription);
 
         await interaction.reply({ embeds: [embed] });
@@ -58,3 +57,4 @@ module.exports = {
     run: pause
 
 };
+
