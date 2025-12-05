@@ -16,8 +16,6 @@ async function allPlaylists(client, interaction, lang) {
                     url: config.SupportServer
                 })
                 .setDescription(lang.allplaylists.embed.noPlaylistsFoundDescription)
-                .setFooter({ text: lang.footer, iconURL: musicIcons.heartIcon })
-                .setTimestamp();
 
             await interaction.reply({ embeds: [noPlaylistsEmbed] });
             return;
@@ -47,8 +45,6 @@ async function allPlaylists(client, interaction, lang) {
                     url: config.SupportServer
                 })
                 .setDescription(description)
-                .setFooter({ text: lang.footer, iconURL: musicIcons.heartIcon })
-                .setTimestamp();
         });
 
         for (const embed of embeds) {
@@ -63,8 +59,6 @@ async function allPlaylists(client, interaction, lang) {
                 iconURL: musicIcons.alertIcon,
                 url: config.SupportServer
             })
-            .setFooter({ text: lang.footer, iconURL: musicIcons.heartIcon })
-            .setTimestamp()
             .setDescription(lang.allplaylists.embed.errorDescription);
 
         await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
@@ -76,4 +70,5 @@ module.exports = {
     description: 'List all public playlists',
     permissions: '0x0000000000000800',
     run: allPlaylists
+
 };
