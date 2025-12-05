@@ -44,7 +44,6 @@ async function pause(client, interaction, lang) {
                 iconURL: musicIcons.alertIcon,
                 url: config.SupportServer
             })
-            .setFooter({ text: lang.footer, iconURL: musicIcons.heartIcon })
             .setDescription(lang.pause.embed.errorDescription);
 
         await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
@@ -57,4 +56,5 @@ module.exports = {
     permissions: "0x0000000000000800",
     options: [],
     run: pause
+
 };
